@@ -1,5 +1,6 @@
 #' Draw flowers
 #'
+#'
 #' @export
 #' @param my_df data frame
 #' @param my_grouping_var field within data frame
@@ -20,6 +21,7 @@ draw_flowers <-
            my_y_jitter = 0,
            my_curvature = 0.5,
            my_angle = 90) {
+
     my_color_var <- enquo(my_color_var)
     my_metric_var <- enquo(my_metric_var)
     my_grouping_var <- enquo(my_grouping_var)
