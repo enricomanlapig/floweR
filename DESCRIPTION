@@ -12,5 +12,6 @@ LazyData: true
 Imports: 
     dplyr,
     ggplot2,
-    tidyr 
+    tidyr,
+    rlang
 RoxygenNote: 7.1.1

@@ -30,7 +30,7 @@ draw_flowers(
 
 \item{my_curvature}{numeric variable}
 
-\item{my_angle}{numeric variable}
+\item{my_angle}{numeric variable between 0 and 180}
 }
 \description{
 Draw flowers
