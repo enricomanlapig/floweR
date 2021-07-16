@@ -10,7 +10,9 @@
 #' @param my_y_jitter numeric variable
 #' @param my_curvature numeric variable
 #' @param my_angle numeric variable between 0 and 180
+#' @import dplyr ggplot2
 
+NULL
 
 draw_flowers <-
   function(my_df,
