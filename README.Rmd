@@ -1,0 +1,55 @@
+---
+output: github_document
+---
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# About
+
+This package provides a single function `make_flowers`.
+
+## Installation
+
+You can install the development version of make_flowers [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("enricomanlapig/floweR")
+```
+
+
+## Example graphic
+
+
+```{r example}
+library(floweR)
+library(dplyr)
+library(ggplot2)
+
+
+num_points <- 30
+
+df <- data.frame(
+  group = c(rep("A", num_points),
+            rep("B", num_points),
+            rep("C", num_points)),
+  metric = c(runif(num_points)*0.5,
+             runif(num_points),
+             runif(num_points)*1.2)
+)
+
+df %>%
+  draw_flowers(group, metric, metric, my_curvature = 0.6, my_angle = 130) +
+  scale_colour_gradient(low = "orange", high = "pink")
+```
+
+
+
