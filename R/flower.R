@@ -1,7 +1,5 @@
 #' Draw flowers
 #'
-#'
-#' @export
 #' @param my_df data frame
 #' @param my_grouping_var field within data frame
 #' @param my_metric_var numeric field within data frame
@@ -10,7 +8,26 @@
 #' @param my_y_jitter numeric variable
 #' @param my_curvature numeric variable
 #' @param my_angle numeric variable between 0 and 180
-#' @import dplyr ggplot2
+#' @importFrom dplyr %>%
+#' @importFrom dplyr mutate
+#' @importFrom dplyr arrange
+#' @importFrom dplyr group_by
+#' @importFrom dplyr enquo
+#' @importFrom dplyr pull
+#' @importFrom dplyr row_number
+#' @importFrom dplyr count
+#' @importFrom dplyr first
+#' @importFrom dplyr ungroup
+#' @importFrom dplyr n
+#' @importFrom stats runif
+#' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 geom_curve
+#' @importFrom ggplot2 geom_text
+#' @importFrom ggplot2 coord_fixed
+#' @importFrom ggplot2 theme_void
+#' @importFrom ggplot2 aes
+#'
+#' @export
 
 NULL
 
@@ -24,6 +41,8 @@ draw_flowers <-
            my_curvature = 0.5,
            my_angle = 90) {
 
+    original_order <- group_number <- max_width <- num_obs <- degree_increment <- x_pos <- y_pos <- theta <- x_end <- y_end <- max_length <- NULL
+
     my_color_var <- enquo(my_color_var)
     my_metric_var <- enquo(my_metric_var)
     my_grouping_var <- enquo(my_grouping_var)
@@ -34,16 +53,16 @@ draw_flowers <-
 
     my_df %>%
       mutate(original_order = row_number()) %>%
-      arrange(!!my_grouping_var,!!my_metric_var) -> my_df
+      arrange(!!my_grouping_var,!!my_metric_var) -> tmp_df
 
-    my_df <- cbind(my_df,
+    tmp_df <- cbind(tmp_df,
                    group_number = rep(1:length(unique(
-                     pull(my_df,!!my_grouping_var)
+                     pull(tmp_df,!!my_grouping_var)
                    )),
-                   times = count(my_df,!!my_grouping_var)$n))
+                   times = count(tmp_df,!!my_grouping_var)$n))
 
 
-    my_df %>%
+    tmp_df %>%
       arrange(original_order) %>%
       mutate(
         row_num = row_number(),

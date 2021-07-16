@@ -3,11 +3,14 @@ Type: Package
 Title: Draws flower pictures
 Version: 0.1.0
 Author: Enrico Manlapig
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Maintainer: Enrico Manlapig <emanlapig@westmont.ed>
+Description: This package provides a function to draw simple flower shapes from a dataframe. The function draws one flower for each value of a grouping variable.  The length of each petal is mapped from a numeric variable.  Petal colors can also be mapped to a variable. Petals curvature and angle can be adjusted but cannot be mapped.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr, ggplot2, tidyr, rlang
+Imports: 
+    dplyr, 
+    ggplot2, 
+    tidyr, 
+    rlang
 RoxygenNote: 7.1.1
