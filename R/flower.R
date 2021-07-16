@@ -27,7 +27,7 @@
 #' @importFrom ggplot2 theme_void
 #' @importFrom ggplot2 aes
 #'
-#' @export
+#' @export draw_flowers
 
 NULL
 
