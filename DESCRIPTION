@@ -9,9 +9,5 @@ Description: More about what it does (maybe more than one line)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: 
-    dplyr,
-    ggplot2,
-    tidyr,
-    rlang
+Imports: dplyr, ggplot2, tidyr, rlang
 RoxygenNote: 7.1.1
