@@ -1,13 +1,13 @@
 #' Draw flowers
 #'
-#' @param my_df data frame
-#' @param my_grouping_var field within data frame
-#' @param my_metric_var numeric field within data frame
-#' @param my_color_var field within data frame
-#' @param my_x_margin numeric variable
-#' @param my_y_jitter numeric variable
-#' @param my_curvature numeric variable
-#' @param my_angle numeric variable between 0 and 180
+#' @param my_df A data frame
+#' @param my_grouping_var A field that distinguishes each flower
+#' @param my_metric_var A numeric field of petal lengths
+#' @param my_color_var A field to map petal color
+#' @param my_x_margin a numeric field that controls how far the flowers are horizontally positioned from each other
+#' @param my_y_jitter a numeric field that controls the random vertical placement of each flower
+#' @param my_curvature a numeric value that indicates the width of each petal
+#' @param my_angle a numeric value between 0 and 180 that indicates where the widest point of curvature falls on the petal. Values closer to zero put this point closer to the middle of the flower, while values further from zero put the point further away.
 #' @importFrom dplyr %>%
 #' @importFrom dplyr mutate
 #' @importFrom dplyr arrange

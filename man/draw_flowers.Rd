@@ -16,21 +16,21 @@ draw_flowers(
 )
 }
 \arguments{
-\item{my_df}{data frame}
+\item{my_df}{A data frame}
 
-\item{my_grouping_var}{field within data frame}
+\item{my_grouping_var}{A field that distinguishes each flower}
 
-\item{my_metric_var}{numeric field within data frame}
+\item{my_metric_var}{A numeric field of petal lengths}
 
-\item{my_color_var}{field within data frame}
+\item{my_color_var}{A field to map petal color}
 
-\item{my_x_margin}{numeric variable}
+\item{my_x_margin}{a numeric field that controls how far the flowers are horizontally positioned from each other}
 
-\item{my_y_jitter}{numeric variable}
+\item{my_y_jitter}{a numeric field that controls the random vertical placement of each flower}
 
-\item{my_curvature}{numeric variable}
+\item{my_curvature}{a numeric value that indicates the width of each petal}
 
-\item{my_angle}{numeric variable between 0 and 180}
+\item{my_angle}{a numeric value between 0 and 180 that indicates where the widest point of curvature falls on the petal. Values closer to zero put this point closer to the middle of the flower, while values further from zero put the point further away.}
 }
 \description{
 Draw flowers
