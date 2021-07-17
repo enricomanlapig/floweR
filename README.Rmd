@@ -24,31 +24,46 @@ You can install the development version of make_flowers [GitHub](https://github.
 # install.packages("devtools")
 devtools::install_github("enricomanlapig/floweR")
 ```
+## Usage
 
+The function takes the following arguments (required in bold):
+
+* **A dataframe**
+* **A field that distinguishes each flower**
+* **A numeric field of petal lengths**
+* A field to map petal color
+* `x_margin` - a numeric field that controls how far the flowers are horizontally positioned from each other
+* `y_jitter` - a numeric field that controls the random vertical placement of each flower
+* `my_curvature` - a numeric value that indicates the width of each petal
+* `my_angle` - a numeric value between 0 and 180 that indicates where the widest point of curvature falls on the petal. Values closer to zero put this point closer to the middle of the flower, while values further from zero put the point further away.
+
+The function returns a `ggplot` object so other modifiers may be layered on after the function is called
 
 ## Example graphic
 
 
-```{r example}
+```{r example, warning=FALSE, message=FALSE}
 library(floweR)
 library(dplyr)
 library(ggplot2)
 
 
-num_points <- 30
+num_petals <- 7
 
 df <- data.frame(
-  group = c(rep("A", num_points),
-            rep("B", num_points),
-            rep("C", num_points)),
-  metric = c(runif(num_points)*0.5,
-             runif(num_points),
-             runif(num_points)*1.2)
+  group = c(rep("A", num_petals),
+            rep("B", num_petals),
+            rep("C", num_petals)),
+  metric = c(runif(num_petals, min = 1, max = 2)*0.5,
+             runif(num_petals, min = 1, max = 2),
+             runif(num_petals, min = 1, max = 2)*1.2)
 )
 
 df %>%
-  draw_flowers(group, metric, metric, my_curvature = 0.6, my_angle = 130) +
-  scale_colour_gradient(low = "orange", high = "pink")
+  draw_flowers(group, metric, metric, my_curvature = 0.7, my_angle = 130) +
+  scale_colour_gradient(low = "purple", 
+                        high = "pink") + 
+  theme(legend.position = "none")
 ```
 
 
