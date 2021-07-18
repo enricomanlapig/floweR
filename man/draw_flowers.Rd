@@ -9,10 +9,12 @@ draw_flowers(
   my_grouping_var,
   my_metric_var,
   my_color_var = NULL,
+  my_hole_size = 0,
   my_x_margin = 0,
   my_y_jitter = 0,
   my_curvature = 0.5,
-  my_angle = 90
+  my_angle = 90,
+  my_lwd = 2
 )
 }
 \arguments{
@@ -24,6 +26,8 @@ draw_flowers(
 
 \item{my_color_var}{A field to map petal color}
 
+\item{my_hole_size}{A numeric field that indicates size of middle portion of the flower}
+
 \item{my_x_margin}{a numeric field that controls how far the flowers are horizontally positioned from each other}
 
 \item{my_y_jitter}{a numeric field that controls the random vertical placement of each flower}
@@ -31,6 +35,8 @@ draw_flowers(
 \item{my_curvature}{a numeric value that indicates the width of each petal}
 
 \item{my_angle}{a numeric value between 0 and 180 that indicates where the widest point of curvature falls on the petal. Values closer to zero put this point closer to the middle of the flower, while values further from zero put the point further away.}
+
+\item{my_lwd}{A numeric field that indicates widht of petal lines}
 }
 \description{
 Draw flowers
