@@ -25,12 +25,15 @@ The function takes the following arguments (required in bold):
     horizontally positioned from each other
 -   `y_jitter` - a numeric field that controls the random vertical
     placement of each flower
+-   `my_hole_size` - a numeric field that controls the size of the
+    middle portion of the flower
 -   `my_curvature` - a numeric value that indicates the width of each
     petal
 -   `my_angle` - a numeric value between 0 and 180 that indicates where
     the widest point of curvature falls on the petal. Values closer to
     zero put this point closer to the middle of the flower, while values
     further from zero put the point further away.
+-   `lwd` - a numeric value that controls the width of the petal lines
 
 The function returns a `ggplot` object so other modifiers may be layered
 on after the function is called
@@ -55,9 +58,9 @@ df <- data.frame(
 )
 
 df %>%
-  draw_flowers(group, metric, metric, my_curvature = 0.7, my_angle = 130) +
-  scale_colour_gradient(low = "purple", 
-                        high = "pink") + 
+  draw_flowers(group, metric, metric, my_hole_size = 0.3, my_curvature = 0.7, my_angle = 130, my_lwd = 5) +
+  scale_colour_gradient(low = "purple", high = "pink") + 
+  scale_fill_manual(values = c("violet", "orange", "yellow")) + 
   theme(legend.position = "none")
 ```
 
