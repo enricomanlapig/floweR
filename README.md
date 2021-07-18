@@ -58,7 +58,7 @@ df <- data.frame(
 )
 
 df %>%
-  draw_flowers(group, metric, metric, my_hole_size = 0.3, my_curvature = 0.7, my_angle = 130, my_lwd = 5) +
+  draw_flowers(group, metric, metric, my_hole_size = 0.5, my_curvature = 0.5, my_angle = 100, my_lwd = 7) +
   scale_colour_gradient(low = "purple", high = "pink") + 
   scale_fill_manual(values = c("violet", "orange", "yellow")) + 
   theme(legend.position = "none")
